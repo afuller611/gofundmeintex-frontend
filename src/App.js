@@ -6,15 +6,22 @@ import Menu from './components/Menu';
 import Search from './components/Search'
 import Footer from './components/Footer';
 import CampaignDetails from './components/CampaignDetails';
+import PleaseLogIn from './components/PleaseLogIn';
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { useAuth0 } from "./utils/react-auth0-spa";
+import { Grid } from '@material-ui/core'
+import Logo from './NewLogo.png'
 
 
 
 const App = () => {
-  const { loading, user } = useAuth0();
+  const { loading, user, isAuthenticated } = useAuth0();
   console.log(user)
-  if (loading) return <div>Loading...</div>
+  if (loading) return (
+    <Grid container justify="center" alignContent="center" style={{ height: "100vh" }}>
+      <img src={Logo} alt="loading" />
+    </Grid>
+  )
   return (
     <MuiThemeProvider theme={createMuiTheme({
       palette: {
@@ -30,11 +37,19 @@ const App = () => {
         <Switch>
           <Route exact path="/search">
             <Menu />
-            <Search />
+            {isAuthenticated ?
+              <Search />
+              :
+              <PleaseLogIn />
+            }
           </Route>
           <Route path="/campaign/:id">
             <Menu />
-            <CampaignDetails/>
+            {isAuthenticated ?
+              <CampaignDetails />
+              :
+              <PleaseLogIn />
+            }
           </Route>
           <Route path="/">
             <Home />

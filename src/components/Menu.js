@@ -39,9 +39,9 @@ const Menu = (props) => {
                         onChange={(event, value) => setTabValue(value)}
                     >
                         <Tab component={Link} to="/" label={<Grid container justify="center"><Home color="primary" style={{ marginRight: 10 }} /><Typography color="primary">{"Home"}</Typography></Grid>} />
-                        <Tab component={Link} to="/search" label={<Grid container justify="center"><Search color="primary" style={{ marginRight: 10 }} /><Typography color="primary">{"Search"}</Typography></Grid>} />
-                        <Tab component={Link} to="/analyze" label={<Grid container justify="center"><BarChart color="primary" style={{ marginRight: 10 }} /><Typography color="primary">{"Analytics Tool"}</Typography></Grid>} />
-
+                        <Tab component={Link} to="/search" label={<Grid container justify="center"><Search color="primary" style={{ marginRight: 10 }} /><Typography color="primary">{"Search Campaigns"}</Typography></Grid>} />
+                        <Tab component={Link} to="/analyze" label={<Grid container justify="center"><BarChart color="primary" style={{ marginRight: 10 }} /><Typography color="primary">{"Analyze My Campaign"}</Typography></Grid>} />
+                        
                     </Tabs>
                     <div style={{ display: "flex", justifyContent: "flex-end", marginLeft: 20 }}>
                         {!isAuthenticated && (
