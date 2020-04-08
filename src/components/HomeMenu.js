@@ -5,6 +5,8 @@ import Logo from '../NewLogo.png';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
+import { useAuth0 } from "../utils/react-auth0-spa";
+
 
 
 const useStyles = makeStyles({
@@ -14,6 +16,7 @@ const useStyles = makeStyles({
 })
 
 const HomeMenu = (props) => {
+    const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
     const otherWindow = props.window;
     const getTabState = () => {
         if (window.location.pathname.includes("search")) return 1
@@ -49,8 +52,14 @@ const HomeMenu = (props) => {
 
                 </Tabs>
                 <div style={{ display: "flex", justifyContent: "flex-end", marginLeft: 20 }}>
-                    <Button variant="outlined" color="primary">{"Sign In"}</Button>
-                </div>
+                    {!isAuthenticated && (
+                        <Button variant="outlined" color="primary" onClick={() => loginWithRedirect({})}>{"Sign In"}</Button>
+                    )}
+
+                    {isAuthenticated && (
+                        <Button variant="outlined" color="primary" onClick={() => logout()}>{"Sign Out"}</Button>
+
+                    )}                </div>
             </Toolbar>
         </AppBar >
     )

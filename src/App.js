@@ -7,10 +7,14 @@ import Search from './components/Search'
 import Footer from './components/Footer';
 import CampaignDetails from './components/CampaignDetails';
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { useAuth0 } from "./utils/react-auth0-spa";
 
 
 
 const App = () => {
+  const { loading, user } = useAuth0();
+  console.log(user)
+  if (loading) return <div>Loading...</div>
   return (
     <MuiThemeProvider theme={createMuiTheme({
       palette: {

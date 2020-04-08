@@ -4,6 +4,7 @@ import { Search, BarChart, Home } from '@material-ui/icons'
 import Logo from '../NewLogo.png';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
+import { useAuth0 } from "../utils/react-auth0-spa";
 
 
 const useStyles = makeStyles({
@@ -13,7 +14,7 @@ const useStyles = makeStyles({
 })
 
 const Menu = (props) => {
-
+    const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
     const classes = useStyles({ ...props });
 
     const getTabState = () => {
@@ -43,7 +44,14 @@ const Menu = (props) => {
 
                     </Tabs>
                     <div style={{ display: "flex", justifyContent: "flex-end", marginLeft: 20 }}>
-                        <Button variant="outlined" color="primary">{"Sign In"}</Button>
+                        {!isAuthenticated && (
+                            <Button variant="outlined" color="primary" onClick={() => loginWithRedirect({})}>{"Sign In"}</Button>
+                        )}
+
+                        {isAuthenticated && (
+                            <Button variant="outlined" color="primary" onClick={() => logout()}>{"Sign Out"}</Button>
+
+                        )}
                     </div>
                 </Toolbar>
             </AppBar >
