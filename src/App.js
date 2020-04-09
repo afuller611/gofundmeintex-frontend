@@ -6,6 +6,7 @@ import Menu from './components/Menu';
 import Search from './components/Search'
 import Footer from './components/Footer';
 import CampaignDetails from './components/CampaignDetails';
+import CampaignAnalyze from './components/CampaignAnalyze';
 import PleaseLogIn from './components/PleaseLogIn';
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { useAuth0 } from "./utils/react-auth0-spa";
@@ -45,8 +46,17 @@ const App = () => {
           </Route>
           <Route path="/campaign/:id">
             <Menu />
-            {isAuthenticated ?
+            {isAuthenticated // FIXME && isadminuser
+              ?
               <CampaignDetails />
+              :
+              <PleaseLogIn />
+            }
+          </Route>
+          <Route path="/analyze">
+            <Menu />
+            {isAuthenticated ?
+              <CampaignAnalyze />
               :
               <PleaseLogIn />
             }
