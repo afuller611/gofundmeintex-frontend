@@ -190,7 +190,7 @@ const CampaignAnalyze = (props) => {
                                         {result && <Typography style={{ maxWidth: 500 }} variant="body1">This means that we expect you to gain {parseFloat(result).toFixed(3)}% ({((parseFloat(result).toFixed(3) / 100) * state.goal).toFixed(2)} {state.currencyCode}) of your goal each day.
                                         <br />
                                             <br />
-                                            {parseFloat(result) > 0 ? `It would take you ${Math.ceil(1 / (parseFloat(result) / 100))} day${Math.ceil(1 / (parseFloat(result) / 100)) > 1 ? "s" : ""} to reach your goal.` : "We don't expect you would reach your goal."}
+                                            {parseFloat(result) > 0 ? `We'd predict it would take ${Math.ceil(1 / (parseFloat(result) / 100))} day${Math.ceil(1 / (parseFloat(result) / 100)) > 1 ? "s" : ""} to reach your goal.` : "We don't expect you would reach your goal."}
 
                                         </Typography>
                                         }
