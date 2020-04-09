@@ -77,7 +77,7 @@ const CampaignAnalyze = (props) => {
             <Grid container direction="column">
                 <Typography variant="h3" style={{ marginBottom: 20 }}>{"Analyze a Potential Campaign"}</Typography>
                 <Typography variant="subtitle1">We've developed a model to indicate how well your GoFundMe campaign would do based on several criteria</Typography>
-                <Typography variant="subtitle1">Fill in the following fields and click submit to see your results</Typography>
+                <Typography variant="subtitle1">Fill in the following fields and click "Analyze Campaign" to see your results</Typography>
                 <Card style={{ backgroundColor: "#deeaf7", marginTop: 30, maxWidth: 1000 }}>
                     <CardContent >
                         <form onSubmit={(e) => handleSubmit(e)}>
