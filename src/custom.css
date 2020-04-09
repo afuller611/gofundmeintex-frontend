@@ -76,7 +76,7 @@
     stroke-linecap: round; }
   
     .final-check-symbol {
-      animation: check-anim 3s cubic-bezier(0.25, 1, 0.6, 1) 1;
+      animation: check-anim 5s cubic-bezier(0.25, 1, 0.6, 1) infinite;
     }
   
     @keyframes check-anim {
