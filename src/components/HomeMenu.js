@@ -57,7 +57,7 @@ const HomeMenu = (props) => {
                     )}
 
                     {isAuthenticated && (
-                        <Button variant="outlined" color="primary" onClick={() => logout()}>{"Sign Out"}</Button>
+                        <Button variant="outlined" color="primary" onClick={() => logout({returnTo: window.location.origin})}>{"Sign Out"}</Button>
 
                     )}
                 </div>
