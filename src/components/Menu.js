@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom'
 import { useAuth0 } from "../utils/react-auth0-spa";
 
+//Normal Menu component 
 
 const useStyles = makeStyles({
     indicator: {

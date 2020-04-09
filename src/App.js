@@ -16,7 +16,7 @@ import CookieConsent from "react-cookie-consent";
 
 
 
-
+//Main App -- Everything is routed here
 const App = () => {
   const { loading, isAuthenticated, admin } = useAuth0();
   if (loading) return (

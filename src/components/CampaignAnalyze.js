@@ -26,6 +26,8 @@ const categories = [
     { name: 'Other', id: 15 }
 ]
 
+// Component for Analyzing Campaigns
+
 const CampaignAnalyze = (props) => {
     const [state, setState] = React.useState({
         goal: "",

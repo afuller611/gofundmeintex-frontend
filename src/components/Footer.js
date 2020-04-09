@@ -1,6 +1,8 @@
 import React from 'react'
 import { Grid, Typography } from '@material-ui/core';
 
+//Footer - Pretty straightforward
+
 const Footer = (props) => {
     return (
         <div style={{ backgroundColor: "#333232", padding: "50px 30px", minHeight: 50 }}>

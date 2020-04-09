@@ -3,6 +3,8 @@ import Hero from './Hero'
 import HomeMenu from './HomeMenu'
 import { Grid } from '@material-ui/core'
 
+
+//Home Component
 const Home = (props) => {
     return (
         <Grid container direction="column">

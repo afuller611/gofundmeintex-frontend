@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import { useAuth0 } from "../utils/react-auth0-spa";
 
 
+//Different menu for home so it's transparent at top of page
 
 const useStyles = makeStyles({
     indicator: {

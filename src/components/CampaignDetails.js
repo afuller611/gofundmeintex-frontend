@@ -9,6 +9,7 @@ import axios from 'axios';
 import { Progress } from 'react-sweet-progress';
 import "../custom.css";
 
+// Component for Campaign Details
 
 const CampaignDetails = (props) => {
     const { id } = useParams()

@@ -4,7 +4,7 @@ import { useAuth0 } from "../utils/react-auth0-spa";
 import lockImage from '../otherlock.png'
 import axios from 'axios'
 
-
+// Component to prompt people to login or that they need more rights
 const PleaseLogIn = (props) => {
     const { isAuthenticated, loginWithRedirect, user } = useAuth0();
 

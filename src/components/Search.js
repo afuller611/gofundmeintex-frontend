@@ -15,6 +15,8 @@ const useStyles = makeStyles({
     }
 })
 
+
+//Search Component
 const Search = (props) => {
     const classes = useStyles(props);
 

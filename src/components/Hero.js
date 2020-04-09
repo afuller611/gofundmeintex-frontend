@@ -4,7 +4,7 @@ import { Grid, Typography, Button, Card, CardContent } from '@material-ui/core';
 import { Link } from 'react-router-dom'
 import { useAuth0 } from "../utils/react-auth0-spa";
 
-
+//Hero Component
 const Hero = (props) => {
     const { isAuthenticated, loginWithRedirect } = useAuth0();
     return (
