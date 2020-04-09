@@ -17,7 +17,7 @@ const Hero = (props) => {
                             <Typography style={{ marginBottom: 20 }} color="primary">Here at AnalyzeFundMe we aim to help others make the best campaign possible.</Typography>
                             <Grid container justify="flex-end">
                                 {!isAuthenticated && (
-                                    <Button variant="outlined" color="primary" onClick={() => loginWithRedirect({})}>{"Sign In to get started"}</Button>
+                                    <Button variant="outlined" color="primary" onClick={() => loginWithRedirect({})}>{"Sign Up or Sign In to get started"}</Button>
                                 )}
                                 {isAuthenticated && (
                                     <Button variant="outlined" component={Link} to="/analyze" color="primary">{"Analyze a Campaign"}</Button>

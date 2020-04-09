@@ -1,6 +1,8 @@
 import React from 'react'
 import { Grid, Card, CardContent, Typography, TextField, FormControlLabel, Checkbox, FormControl, Radio, Button, CircularProgress } from '@material-ui/core'
 import axios from 'axios';
+import { CheckCircle } from '@material-ui/icons'
+import '../custom.css'
 
 const currencies = ['USD', 'EUR', 'GBP', 'CAD', 'AUD', 'CHF', 'SEK', 'NOK', 'DKK']
 const categories = ['Accidents & Emergencies', 'Animals & Pets', 'Babies Kids & Family', 'Business & Entrepreneurs', 'Celebrations & Events', 'Community & Neighbors', 'Creative Arts Music & Film', 'Funerals & Memorials', 'Travel & Adventure', 'Medical Illness & Healing', 'Missions Faith & Church', 'Weddings & Honeymoons', 'Sports Teams & Clubs', 'Education & Learning', 'Volunteer & Service', 'Competitions & Pageants', 'Dreams Hopes & Wishes', 'Other']
@@ -27,6 +29,7 @@ const CampaignAnalyze = (props) => {
 
     const handleSubmit = (e) => {
         setNotNumber(false)
+        setResult("")
         e.preventDefault()
         if (isNaN((parseInt(state.goal)))) {
             setNotNumber(true)
@@ -136,16 +139,16 @@ const CampaignAnalyze = (props) => {
                                     </Grid>
                                 </Grid>
                                 <Grid style={{ margin: 40 }} container justify="space-between">
-                                    {loading ? <CircularProgress color="secondary" /> :
+                                    {loading ? <Grid container justify="center"><CircularProgress color="secondary" /></Grid> :
                                         <Button size="large" style={{ color: "white", padding: 20, fontSize: 24 }} variant="contained" color="secondary" type="submit">Analyze Campaign</Button>
                                     }
-                                    <div style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
-                                        <Typography variant="h4" color="secondary">{result}</Typography>
-                                        {result && <Typography variant="body1">This means that we expect you to gain {result}% of your goal each day</Typography>}
+                                    <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center" }}>
+                                        {result && <CheckCircle className="final-check-symbol" color="secondary" style={{ fontSize: 40 }} />}
+                                        {result && <Typography style={{ marginBottom: 20 }} variant="h4" color="secondary">{result}%</Typography>}
+                                        {result && <Typography variant="body1">This means that we expect you to gain {parseFloat(result).toFixed(3)}% of your goal each day.</Typography>}
                                     </div>
                                 </Grid>
                             </Grid>
-
                         </form>
                     </CardContent>
                 </Card>
