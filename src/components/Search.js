@@ -29,7 +29,6 @@ const Search = (props) => {
                 firstName: state.firstName,
                 lastName: state.lastName
             }).then((res) => {
-                console.log(res.data)
                 setState({
                     ...state,
                     showResults: true,
