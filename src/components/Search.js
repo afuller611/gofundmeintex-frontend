@@ -61,12 +61,12 @@ const Search = (props) => {
         <>
             <img src={SearchImage} alt="search" style={{ maxWidth: "100vw" }} />
             <div style={{ padding: "20px 40px" }}>
-                <Typography variant="h4" style={{ marginBottom: 30 }}>Search Campaigns</Typography>
+                <Typography variant="h4" style={{ marginBottom: 100 }}>Search Campaigns</Typography>
                 <Typography style={{ marginBottom: 20 }}>Fill out at least one field below to search for related campaigns</Typography>
                 {/* Form */}
                 <form onSubmit={(e) => searchCampaigns(e)} style={{ marginBottom: 20 }}>
                     <Grid container direction="column" justify="space-around">
-                        <Grid item style={{ marginBottom: 20 }}>
+                        <Grid item style={{ marginBottom: 30}}>
                             <TextField style={{ marginRight: 20, marginBottom: 20 }} variant="outlined" label="Title" value={state.title} onChange={(event) => setState({ ...state, title: event.target.value })} />
                             <TextField style={{ marginRight: 20, marginBottom: 20 }} variant="outlined" label="Description" value={state.description} onChange={(event) => setState({ ...state, description: event.target.value })} />
                             <TextField style={{ marginRight: 20, marginBottom: 20 }} variant="outlined" label="First Name" value={state.firstName} onChange={(event) => setState({ ...state, firstName: event.target.value })} />
