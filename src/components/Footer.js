@@ -12,6 +12,11 @@ const Footer = (props) => {
                         {"AnalyzeFundMe is an educational tool built by BYU Information Systems students and is in no way affiliated with GoFundMe."}
                     </Typography>
                 </Grid>
+                <Grid item xs={12}>
+                    <Typography style={{ color: "white" }}>
+                        {"This site was not designed to be mobile friendly."}
+                    </Typography>
+                </Grid>
             </Grid>
         </div>
     )
