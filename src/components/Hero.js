@@ -18,7 +18,7 @@ const Hero = (props) => {
                                 Here at AnalyzeFundMe we aim to help others make the best campaign possible.
                                 <br />
                                 <br />
-                                Often, those with good intentions don't know what a campaign needs so that they can help those around them.
+                                Often, those with good intentions don't know what features a campaign needs so that they can be successful.
                                 <br />
                                 <br />
                                 With AnalyzeFundMe, you can use our predictive model to estimate how your campaign would do based on a variety of features.
