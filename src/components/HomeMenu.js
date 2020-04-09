@@ -34,7 +34,6 @@ const HomeMenu = (props) => {
 
     const classes = useStyles({ ...props, trigger });
 
-    console.log(trigger)
     return (
         <AppBar style={{ maxHeight: 100, backgroundColor: trigger ? "white" : "transparent" }}>
             <Toolbar>
