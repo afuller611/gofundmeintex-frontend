@@ -21,10 +21,10 @@ const Hero = (props) => {
                                 </Typography>
                             <Grid container justify="flex-end">
                                 {!isAuthenticated && (
-                                    <Button variant="outlined" color="primary" onClick={() => loginWithRedirect({})}>{"Sign Up or Sign In to get started"}</Button>
+                                    <Button variant="contained" color="primary" onClick={() => loginWithRedirect({})}>{"Sign Up or Sign In to get started"}</Button>
                                 )}
                                 {isAuthenticated && (
-                                    <Button variant="outlined" component={Link} to="/analyze" color="primary">{"Analyze a Campaign"}</Button>
+                                    <Button variant="contained" component={Link} to="/analyze" color="secondary">{"Analyze a Campaign"}</Button>
                                 )}
                             </Grid>
                         </CardContent>
