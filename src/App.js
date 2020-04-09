@@ -10,15 +10,15 @@ import CampaignAnalyze from './components/CampaignAnalyze';
 import PleaseLogIn from './components/PleaseLogIn';
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { useAuth0 } from "./utils/react-auth0-spa";
-import { Grid } from '@material-ui/core'
+import { Grid, Typography } from '@material-ui/core'
 import Logo from './NewLogo.png'
+import CookieConsent from "react-cookie-consent";
+
 
 
 
 const App = () => {
-  const { loading, user, isAuthenticated, admin } = useAuth0();
-  console.log(user)
-  console.log(admin)
+  const { loading, isAuthenticated, admin } = useAuth0();
   if (loading) return (
     <Grid container justify="center" alignContent="center" style={{ height: "100vh" }}>
       <img src={Logo} alt="loading" />
@@ -66,6 +66,13 @@ const App = () => {
             <Home />
           </Route>
         </Switch>
+        <CookieConsent
+          location="bottom"
+          buttonText="Accept"
+          style={{ backgroundColor: "#333232" }}
+          buttonStyle={{ backgroundColor: "#003A7A", color: "white" }}
+        ><Typography>This website uses cookies for authentication</Typography>
+        </CookieConsent>
         <Footer />
       </Router>
     </MuiThemeProvider>
