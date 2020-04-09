@@ -28,7 +28,7 @@ const Hero = (props) => {
                                     <Button variant="contained" style={{ color: "white" }} color="primary" onClick={() => loginWithRedirect({})}>{"Sign Up or Sign In to get started"}</Button>
                                 )}
                                 {isAuthenticated && (
-                                    <Button variant="contained" component={Link} to="/analyze" color="secondary" style={{ color: "white" }}>{"Analyze a Campaign"}</Button>
+                                    <Button variant="contained" component={Link} to="/analyze" color="secondary" style={{ color: "white" }}>{"Analyze My Campaign"}</Button>
                                 )}
                             </Grid>
                         </CardContent>
