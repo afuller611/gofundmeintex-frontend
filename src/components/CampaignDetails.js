@@ -60,7 +60,7 @@ const CampaignDetails = (props) => {
                                                 <Tooltip placement="right" title={<Typography style={{ color: "white" }}>{`This campaign was detected to be ${campaign.language} so we used the ${campaign.language === "Italian" ? campaign.language : "English"} model for the predicted value${campaign.language !== "English" && campaign.language !== "Italian" ? " because we don't have a model for that language yet." : "."}`}</Typography>}><Info style={{ fontSize: 20, color: "#5b7f92", marginTop: 6, marginLeft: 5 }} /></Tooltip>
                                             </div>
                                             <Typography variant="body1" style={{ fontWeight: 600 }}>Predicted: {parseFloat(campaign.score).toFixed(4)}%</Typography>
-                                            <Typography variant="body1" style={{ fontWeight: 600 }}>Actual: {((parseFloat(campaign.current_amount) / parseFloat(campaign.goal)) / (parseFloat(campaign.days_active) ? parseFloat(campaign.days_active) : 1)) * 100}%</Typography>
+                                            <Typography variant="body1" style={{ fontWeight: 600 }}>Actual: {(((parseFloat(campaign.current_amount) / parseFloat(campaign.goal)) / (parseFloat(campaign.days_active) ? parseFloat(campaign.days_active) : 1)) * 100).toFixed(4)}%</Typography>
                                         </Grid>
                                     </Grid>
                                     <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
