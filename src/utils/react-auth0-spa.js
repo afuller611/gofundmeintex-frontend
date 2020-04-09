@@ -31,7 +31,6 @@ export const Auth0Provider = ({
 
             if (window.location.search.includes("code=") &&
                 window.location.search.includes("state=")) {
-                console.log(window.location.search)
                 const { appState } = await auth0FromHook.handleRedirectCallback();
                 onRedirectCallback(appState);
             }
@@ -76,10 +75,6 @@ export const Auth0Provider = ({
         setUser(user);
     };
 
-    const getSuperToken = async () => {
-        const accessToken = await auth0Client.getTokenSilently();
-        console.log({ raw: accessToken, decoded: jwt_decode(accessToken) });
-    }
     return (
         <Auth0Context.Provider
             value={{
@@ -94,8 +89,7 @@ export const Auth0Provider = ({
                 loginWithRedirect: (...p) => auth0Client.loginWithRedirect(...p),
                 getTokenSilently: (...p) => auth0Client.getTokenSilently(...p),
                 getTokenWithPopup: (...p) => auth0Client.getTokenWithPopup(...p),
-                logout: (...p) => auth0Client.logout(...p),
-                getSuperToken
+                logout: (...p) => auth0Client.logout(...p)
             }}
         >
             {children}

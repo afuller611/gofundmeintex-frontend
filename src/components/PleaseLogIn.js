@@ -11,8 +11,6 @@ const PleaseLogIn = (props) => {
     const [loading, setLoading] = React.useState(false)
 
     const getAdminRights = () => {
-        console.log("Implement getting admin rights here")
-        console.log(user.sub)
         setLoading(true)
         axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/becomeAdmin`, { userId: user.sub }).then(() => {
             window.location.reload()

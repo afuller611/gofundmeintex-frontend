@@ -21,7 +21,6 @@ const CampaignDetails = (props) => {
         setLoading(true)
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/campaign/${id}`).then((res) => {
             setCampaign(res.data)
-            console.log(res.data)
             setLoading(false)
         }).catch((err) => {
             console.log(err)
