@@ -16,15 +16,19 @@ const Hero = (props) => {
                             <Typography style={{ marginBottom: 20 }} color="primary" variant="h4">Let's Analyze Some Campaigns</Typography>
                             <Typography style={{ marginBottom: 20 }} color="primary">
                                 Here at AnalyzeFundMe we aim to help others make the best campaign possible.
+                                <br />
+                                <br />
                                 Often, those with good intentions don't know what a campaign needs so that they can help those around them.
+                                <br />
+                                <br />
                                 With AnalyzeFundMe, you can use our predictive model to estimate how your campaign would do based on a variety of features.
                                 </Typography>
                             <Grid container justify="flex-end">
                                 {!isAuthenticated && (
-                                    <Button variant="contained" style={{color: "white"}} color="primary" onClick={() => loginWithRedirect({})}>{"Sign Up or Sign In to get started"}</Button>
+                                    <Button variant="contained" style={{ color: "white" }} color="primary" onClick={() => loginWithRedirect({})}>{"Sign Up or Sign In to get started"}</Button>
                                 )}
                                 {isAuthenticated && (
-                                    <Button variant="contained" component={Link} to="/analyze" color="secondary" style={{color: "white"}}>{"Analyze a Campaign"}</Button>
+                                    <Button variant="contained" component={Link} to="/analyze" color="secondary" style={{ color: "white" }}>{"Analyze a Campaign"}</Button>
                                 )}
                             </Grid>
                         </CardContent>
