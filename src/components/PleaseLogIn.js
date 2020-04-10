@@ -18,7 +18,7 @@ const PleaseLogIn = (props) => {
     }
     return (
         <div>
-            <img src={lockImage} alt="please log in" style={{ width: "100vw" }} />
+            <img src={lockImage} alt="please log in" style={{ maxWidth: "100vw" }} />
             <div style={{ padding: "20px 40px" }}>
                 {isAuthenticated ? (
                     <Grid container direction="column" >
