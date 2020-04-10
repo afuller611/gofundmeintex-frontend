@@ -41,7 +41,7 @@ const PleaseLogIn = (props) => {
                             <Typography variant="body1" style={{ marginBottom: 20 }}>
                                 {"Don't worry, it's free and you can sign up with any email."}
                             </Typography>
-                            <Button onClick={() => loginWithRedirect({})} style={{ maxWidth: 400, color: "white" }} size="large" color="secondary" variant="contained">{"Sign in or Sign Up"}</Button>
+                            <Button onClick={() => loginWithRedirect({})} style={{ maxWidth: 400, color: "white" }} size="large" color="secondary" variant="contained">{"Sign in | Sign Up"}</Button>
                         </Grid>
                     )
 
