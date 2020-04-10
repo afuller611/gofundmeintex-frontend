@@ -46,7 +46,7 @@ const Menu = (props) => {
                     </Tabs>
                     <div style={{ display: "flex", justifyContent: "flex-end", marginLeft: 20 }}>
                         {!isAuthenticated && (
-                            <Button variant="outlined" color="primary" onClick={() => loginWithRedirect({})}>{"Sign In"}</Button>
+                            <Button variant="outlined" color="primary" onClick={() => loginWithRedirect({})}>{"Sign In or Sign Up"}</Button>
                         )}
 
                         {isAuthenticated && (
