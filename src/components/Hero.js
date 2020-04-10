@@ -9,7 +9,7 @@ const Hero = (props) => {
     const { isAuthenticated, loginWithRedirect } = useAuth0();
     return (
         <div style={{ backgroundImage: `url(${HeroImage})`, backgroundAttachment: "fixed", backgroundRepeat: "no-repeat", backgroundSize: "cover", height: "80vh", paddingTop: 100 }}>
-            <Grid container direction="column" justify="center" style={{ height: "50vh" }} item xs={5}>
+            <Grid container direction="column" justify="center" style={{ height: "70vh" }} item xs={10} sm={7} lg={5}>
                 <div style={{ margin: "0 auto" }}>
                     <Card style={{ marginLeft: 20, marginTop: 60 }}>
                         <CardContent style={{ padding: 20, borderRadius: 20 }}>
