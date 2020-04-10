@@ -90,6 +90,7 @@ const Search = (props) => {
                 {state.loading &&
                     <Grid container justify="center" direction="column" alignItems="center">
                         <Typography color="primary" variant="h5" style={{ marginBottom: 20 }}>{"Searching Campaigns..."}</Typography>
+                        <Typography color="primary" variant="caption" style={{ marginBottom: 20 }}>{"If this is the first time the application has loaded in awhile, it may take longer or you may need to refresh the page and try again."}</Typography>
                         <CircularProgress />
                     </Grid>}
                 {state.showResults && (

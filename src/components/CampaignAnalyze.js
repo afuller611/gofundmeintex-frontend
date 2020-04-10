@@ -181,7 +181,11 @@ const CampaignAnalyze = (props) => {
                                     </Grid>
                                 </Grid>
                                 <Grid style={{ margin: 40 }} container justify="space-between" wrap="nowrap" alignItems="center" spacing={3}>
-                                    {loading ? <Grid container justify="center"><CircularProgress color="secondary" /></Grid> :
+                                    {loading ?
+                                        <Grid container justify="center" direction="column">
+                                            <CircularProgress color="secondary" />
+                                            <Typography color="primary" variant="caption" style={{ marginBottom: 20 }}>{"If this is the first time the application has loaded in awhile, it may take longer or you may need to refresh the page and try again."}</Typography>
+                                        </Grid> :
                                         <Button size="large" style={{ color: "white", padding: 20, fontSize: 24, marginRight: 20 }} variant="contained" color="secondary" type="submit">Analyze Campaign</Button>
                                     }
                                     <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center" }}>

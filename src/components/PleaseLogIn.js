@@ -28,7 +28,12 @@ const PleaseLogIn = (props) => {
                         <Typography variant="body1" style={{ marginBottom: 20 }}>
                             {"It looks like you don't have sufficient rights to access our search tool. Because this application doesn't affect anything, you can become an admin by clicking the button below and then logging out and back in."}
                         </Typography>
-                        {loading ? <CircularProgress /> : <Button onClick={() => getAdminRights()} style={{ maxWidth: 400, color: "white" }} size="large" color="secondary" variant="contained">{"Become Admin"}</Button>}
+                        {loading ?
+                            <Grid container justify="center" direction="column">
+                                <CircularProgress />
+                                <Typography color="primary" variant="caption" style={{ marginBottom: 20 }}>{"If this is the first time the application has loaded in awhile, it may take longer or you may need to refresh the page and try again."}</Typography>
+                            </Grid>
+                            : <Button onClick={() => getAdminRights()} style={{ maxWidth: 400, color: "white" }} size="large" color="secondary" variant="contained">{"Become Admin"}</Button>}
                     </Grid>
                 )
 
