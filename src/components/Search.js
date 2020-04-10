@@ -29,7 +29,8 @@ const Search = (props) => {
                 title: state.title,
                 description: state.description,
                 firstName: state.firstName,
-                lastName: state.lastName
+                lastName: state.lastName,
+                asc: state.asc
             }).then((res) => {
                 setState({
                     ...state,
@@ -55,9 +56,10 @@ const Search = (props) => {
         numDisplay: 5,
         loading: false,
         error: false,
-        noInput: false
+        noInput: false,
+        asc: false
     })
-
+console.log(state.asc)
     return (
         <>
             <img src={SearchImage} alt="search" style={{ maxWidth: "100vw" }} />
@@ -67,11 +69,15 @@ const Search = (props) => {
                 {/* Form */}
                 <form onSubmit={(e) => searchCampaigns(e)} style={{ marginBottom: 20 }}>
                     <Grid container direction="column" justify="space-around">
-                        <Grid item style={{ marginBottom: 30}}>
+                        <Grid item style={{ marginBottom: 30 }}>
                             <TextField style={{ marginRight: 20, marginBottom: 20 }} variant="outlined" label="Title" value={state.title} onChange={(event) => setState({ ...state, title: event.target.value })} />
                             <TextField style={{ marginRight: 20, marginBottom: 20 }} variant="outlined" label="Description" value={state.description} onChange={(event) => setState({ ...state, description: event.target.value })} />
                             <TextField style={{ marginRight: 20, marginBottom: 20 }} variant="outlined" label="First Name" value={state.firstName} onChange={(event) => setState({ ...state, firstName: event.target.value })} />
                             <TextField style={{ marginRight: 20, marginBottom: 20 }} variant="outlined" label="Last Name" value={state.lastName} onChange={(event) => setState({ ...state, lastName: event.target.value })} />
+                            <TextField select SelectProps={{ native: true }} style={{ marginRight: 20, marginBottom: 20 }} variant="outlined" label="Order By" value={state.asc} onChange={(event) => setState({ ...state, asc: event.target.value })}>
+                                <option value={false}>Highest Donations First</option>
+                                <option value={true}>Lowest Donations First</option>
+                            </TextField>
 
                             {state.error && <Typography style={{ color: "red" }}>Please remove special characters from fields</Typography>}
                             {state.noInput && <Typography style={{ color: "red" }}>Please fill out at least one field</Typography>}
