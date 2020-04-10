@@ -59,7 +59,6 @@ const Search = (props) => {
         noInput: false,
         asc: false
     })
-console.log(state.asc)
     return (
         <>
             <img src={SearchImage} alt="search" style={{ maxWidth: "100vw" }} />
